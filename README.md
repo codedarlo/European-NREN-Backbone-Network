@@ -24,7 +24,7 @@ The network consists of:
 - 1 ISP router
 - 4 Routers 
 - 4 Switch
-- 12 End devices (PC1, PC2, pc3)
+- 12 End devices (PC1, PC2, PC3)
 - VLAN Groups:
 - VLAN 10 - Internet Access Serivice (IAS) 
 - VLAN 20 - Research and Education (RE)
