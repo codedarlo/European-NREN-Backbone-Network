@@ -21,6 +21,7 @@ This project demonstrates the design and implementation of a secure small enterp
 <img width="817" height="322" alt="image" src="https://github.com/user-attachments/assets/c0be4266-75bd-40dc-8f31-b514cbea5c35" />
 
 The network consists of:
+- 1 ISP router
 - 4 Routers 
 - 4 Switch
 - 12 End devices (PC1, PC2, pc3)
