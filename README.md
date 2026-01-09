@@ -1,39 +1,84 @@
 # EUROPEAN NREN BACKBONE NETWRORK. 
+## OVERVIEW 
 Simulation of a GEANT-style European NREN backbone with segregated R&amp;E, Internet, and LHCONE traffic using VLANs, dynamic routing, DHCP, NAT, and security controls.
-This project demonstrates the design and implementation of a secure small enterprise network using Cisco Packet Tracer. The network was built with scalability, segmentation, and security best practices in mind.
+The network interconnects multiple National.
+Research and Education Networks (NRENs) using a shared, high-capacity TCP/IP
+backbone while enforcing strict traffic segregation and security controls.
 
-## Technologies & Concepts 
-- Cisco Packet Tracer
-- VLAN segmentation
-- Inter-VLAN routing
-- DHCP configuration
-- IPv4 addressing with VLSM
-- SSH secure device access
-- Basic network hardening
-  
-## Network Objectives 
-- Provide logical segmentation using VLANs
-- Enable secure remote management via SSH
-- Automatically assign IP addresses using DHCP
-- Ensure reliable end-to-end IPv4 connectivity
+The design supports three distinct traffic classes:
+- Research & Education (R&E)
+- Internet Access Service (IAS)
+- LHCONE (Large Hadron Collider)
 
-## Network Topology ( NEEDS FINSIHING [add ss of topology] ) 
-<img width="817" height="322" alt="image" src="https://github.com/user-attachments/assets/c0be4266-75bd-40dc-8f31-b514cbea5c35" />
+Each traffic type is isolated at both Layer 2 and Layer 3 to ensure performance,
+security, and policy compliance, reflecting real-world carrier and service
+provider networking practices.
 
-The network consists of:
-- 1 ISP router
-- 4 Routers 
-- 4 Switch
-- 12 End devices (PC1, PC2, PC3)
-- VLAN Groups:
-- VLAN 10 - Internet Access Serivice (IAS) 
-- VLAN 20 - Research and Education (RE)
-- VLAN 30 - LHCONE (LHC) 
+## High-Level Network Design
+The backbone network is designed to theoretically support connectivity for
+42 independent NRENs, each operating as a separate Autonomous System (AS)
+and peering with GEANT at Provider Edge (PE) routers.
+
+The design considers:
+- Scalability and future growth
+- Redundancy and resiliency
+- Cost-aware infrastructure decisions
+- High-capacity Ethernet links (100Gbps minimum)
+- Integration with Tier-1 Internet Service Providers
+
+## Traffic Segmentation Model
+The network enforces strict multi-tenant separation using VLANs and routing
+policies:
+
+### Research & Education (R&E)
+- Dedicated VLAN per site
+- Fully routed traffic between sites
+- Supports inter-university collaboration
+
+### Internet Access Service (IAS)
+- Dedicated VLAN
+- Static default route towards ISP cloud
+- Inter-site communication blocked using ACLs
+
+### LHCONE
+- Dedicated VLAN for high-performance scientific traffic
+- Fully isolated from IAS and external traffic
+- Optimised for large-scale data transfer
+
+## Simulation Scope
+To validate the design, a representative subset of the network is simulated
+using four sites:
+
+- Cambridge (GEANT core site)
+- Amsterdam (GEANT core site)
+- Frankfurt (NREN customer site)
+- Paris (NREN customer site)
+
+Each site contains:
+- Three VLANs (R&E, IAS, LHCONE)
+- DHCP-based host addressing
+- Dynamic inter-site routing
+- End-to-end connectivity testing
+
+## Operational & Security Considerations
+- Private IPv4 addressing with NAT for external connectivity
+- SSH-only remote management on all network devices
+- VLAN and ACL-based traffic isolation
+- Budget-conscious design decisions
+- Security-first configuration principles
+
+## Repository Contents
+- **Network_Design_Report.pdf** – Full technical documentation
+- **Network_Presentation.pdf** – Summary slides for stakeholder presentation
+- **Device_Configurations.txt** – Router and switch configuration commands
+- **Verification_and_Testing.md** – Connectivity and configuration verification
+- **IP_Addressing_Plan.xlsx** – Structured IPv4 addressing using VLSM
+- **Secure_Enterprise_Network.pkt** – Cisco Packet Tracer simulation file
+
 
 ## Skills Demonstrated
-- Enterprise network design methodology
-- Practical Cisco device configuration
-- Security-conscious networking
-- Technical documentation & communication
-- Troubleshooting and verification
-
+- Private IPv4 addressing with NAT for external connectivity
+- SSH-only remote management on all network devices
+- VLAN and ACL-based traffic isolation
+- Budget-conscious design decisions
+- Security-first configuration principles
