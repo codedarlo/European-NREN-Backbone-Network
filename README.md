@@ -82,3 +82,11 @@ Each site contains:
 - VLAN and ACL-based traffic isolation
 - Budget-conscious design decisions
 - Security-first configuration principles
+- 
+
+## Collaboration Note
+
+This project was developed as part of a group-based network design exercise.
+The repository currently focuses on the technical components and documentation
+I personally contributed to. Contributor details may be added later.
+
